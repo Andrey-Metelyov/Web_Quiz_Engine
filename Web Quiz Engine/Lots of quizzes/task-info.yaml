@@ -241,6 +241,113 @@ files:
         }
     }
   learner_created: false
+- name: src/engine/Answer.java
+  visible: true
+  text: |
+    package engine;
+
+    public class Answer {
+        private boolean success;
+        private String feedback;
+
+        public Answer(boolean success, String feedback) {
+            this.success = success;
+            this.feedback = feedback;
+        }
+
+        public boolean isSuccess() {
+            return success;
+        }
+
+        public void setSuccess(boolean success) {
+            this.success = success;
+        }
+
+        public String getFeedback() {
+            return feedback;
+        }
+
+        public void setFeedback(String feedback) {
+            this.feedback = feedback;
+        }
+    }
+  learner_created: true
+- name: src/engine/Quiz.java
+  visible: true
+  text: |
+    package engine;
+
+    public class Quiz {
+        private String title;
+        private String text;
+        private String[] options;
+
+        public Quiz() {
+        }
+
+        public Quiz(String title, String text, String[] options) {
+            this.title = title;
+            this.text = text;
+            this.options = options;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getText() {
+            return text;
+        }
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
+        public String[] getOptions() {
+            return options;
+        }
+
+        public void setOptions(String[] options) {
+            this.options = options;
+        }
+    }
+  learner_created: true
+- name: src/engine/TaskController.java
+  visible: true
+  text: |
+    package engine;
+
+    import org.springframework.web.bind.annotation.*;
+
+    @RestController
+    public class TaskController {
+        public TaskController() {
+        }
+
+        @PostMapping(path = "/api/quiz"/*, consumes = "application/json"*/)
+        public Answer getAnswer(@RequestParam("answer") int answer) {
+            if (answer == 2) {
+                return new Answer(true, "Congratulations, you're right!");
+            }
+            return new Answer(false, "Wrong answer! Please, try again.");
+        }
+
+        @GetMapping(path = "/api/quiz")
+        public Quiz getTask(){
+            return new Quiz("The Java Logo",
+                    "What is depicted on the Java logo?",
+                    new String[] {"Robot","Tea leaf","Cup of coffee","Bug"});
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/505/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/91/stages/505/implement">JetBrains
+    Academy</a>
+  time: Tue, 20 Oct 2020 09:16:35 UTC
 record: -1
