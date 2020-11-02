@@ -1,15 +1,14 @@
 package engine;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.jmx.export.naming.IdentityNamingStrategy;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import javax.validation.Valid;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @RestController
 public class TaskController {
@@ -32,10 +31,11 @@ public class TaskController {
 
     @PostMapping(path = "/api/quizzes")
     @ResponseStatus(HttpStatus.OK)
-    public Quiz addQuiz(
-            @RequestBody Quiz quiz) {
+    public Quiz addQuiz(@Valid @RequestBody Quiz quiz) {
+        System.out.println("New quiz to add:" + quiz);
         quiz.setId(quizMap.size());
         quizMap.put(quiz.getId(), quiz);
+        System.out.println("New quiz added:" + quiz);
         return quiz;
 //        HttpHeaders headers = new HttpHeaders();
 //        headers.setContentType(MediaType.APPLICATION_JSON);
@@ -44,14 +44,18 @@ public class TaskController {
     }
 
     @PostMapping(path = "/api/quizzes/{id}/solve")
-    public Answer getAnswer(@PathVariable int id, @RequestParam("answer") int answer) {
+    public AnswerFeedback getAnswer(@PathVariable int id, @RequestBody Answer answer) {
         Quiz quiz = quizMap.get(id);
         System.out.println(quiz);
         System.out.println("answer = " + answer);
-        if (answer == quizMap.get(id).getAnswer()) {
-            return new Answer(true, "Congratulations, you're right!");
+        Set<Integer> gotAnswer = new HashSet(answer.getAnswer());
+        Set<Integer> correctAnswer = quizMap.get(id).getAnswer();
+        System.out.println("gotAnswer = " + gotAnswer);
+        System.out.println("correctAnswer = " + correctAnswer);
+        if (gotAnswer.equals(correctAnswer)) {
+            return new AnswerFeedback(true, "Congratulations, you're right!");
         }
-        return new Answer(false, "Wrong answer! Please, try again.");
+        return new AnswerFeedback(false, "Wrong answer! Please, try again.");
     }
 
     @GetMapping(path = "/api/quizzes")

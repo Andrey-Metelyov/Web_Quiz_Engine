@@ -440,6 +440,201 @@ files:
         }
     }
   learner_created: false
+- name: src/engine/Quiz.java
+  visible: true
+  text: |
+    package engine;
+
+    import com.fasterxml.jackson.annotation.JsonProperty;
+
+    import java.util.Arrays;
+
+    public class Quiz {
+        private int id;
+        private String title;
+        private String text;
+        private String[] options;
+        @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+        private int answer;
+
+        public Quiz() {
+        }
+
+        public Quiz(int id, String title, String text, String[] options, int answer) {
+            this.id = id;
+            this.title = title;
+            this.text = text;
+            this.options = options;
+            this.answer = answer;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getText() {
+            return text;
+        }
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
+        public String[] getOptions() {
+            return options;
+        }
+
+        public void setOptions(String[] options) {
+            this.options = options;
+        }
+
+        public int getAnswer() {
+            return answer;
+        }
+
+        public void setAnswer(int answer) {
+            this.answer = answer;
+        }
+
+        @Override
+        public String toString() {
+            return "Quiz{" +
+                    "id=" + id +
+                    ", title='" + title + '\'' +
+                    ", text='" + text + '\'' +
+                    ", options=" + Arrays.toString(options) +
+                    ", answer=" + answer +
+                    '}';
+        }
+    }
+  learner_created: true
+- name: src/engine/TaskController.java
+  visible: true
+  text: |
+    package engine;
+
+    import org.springframework.http.HttpHeaders;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.http.MediaType;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.web.bind.annotation.*;
+    import org.springframework.web.server.ResponseStatusException;
+
+    import java.util.Collection;
+    import java.util.HashMap;
+    import java.util.Map;
+
+    @RestController
+    public class TaskController {
+        Map<Integer, Quiz> quizMap = new HashMap<>();
+
+        public TaskController() {
+    //        quizMap.put(1,
+    //                new Quiz(1,
+    //                        "The Java Logo",
+    //                        "What is depicted on the Java logo?",
+    //                        new String[]{"Robot", "Tea leaf", "Cup of coffee", "Bug"},
+    //                        2));
+    //        quizMap.put(2,
+    //                new Quiz(2,
+    //                        "The Zopa Logo",
+    //                        "What is depicted on the Java logo?",
+    //                        new String[]{"Robot", "Ass", "Cup of coffee", "Bug"},
+    //                        1));
+        }
+
+        @PostMapping(path = "/api/quizzes")
+        @ResponseStatus(HttpStatus.OK)
+        public Quiz addQuiz(
+                @RequestBody Quiz quiz) {
+            quiz.setId(quizMap.size());
+            quizMap.put(quiz.getId(), quiz);
+            return quiz;
+    //        HttpHeaders headers = new HttpHeaders();
+    //        headers.setContentType(MediaType.APPLICATION_JSON);
+    //        return new ResponseEntity<>(quiz, headers, HttpStatus.OK);
+    //        return quiz;
+        }
+
+        @PostMapping(path = "/api/quizzes/{id}/solve")
+        public Answer getAnswer(@PathVariable int id, @RequestParam("answer") int answer) {
+            Quiz quiz = quizMap.get(id);
+            System.out.println(quiz);
+            System.out.println("answer = " + answer);
+            if (answer == quizMap.get(id).getAnswer()) {
+                return new Answer(true, "Congratulations, you're right!");
+            }
+            return new Answer(false, "Wrong answer! Please, try again.");
+        }
+
+        @GetMapping(path = "/api/quizzes")
+        public Collection<Quiz> getQuizzes(){
+            return quizMap.values();
+        }
+
+        @GetMapping(path = "/api/quizzes/{id}")
+        public Quiz getQuiz(@PathVariable int id){
+            System.out.println("get quiz with id: " + id);
+            if (!quizMap.containsKey(id)) {
+                System.out.println(id + " not found");
+                throw new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "entity not found"
+                );
+            }
+            return quizMap.get(id);
+        }
+    }
+  learner_created: true
+- name: src/engine/AnswerFeedback.java
+  visible: true
+  text: |
+    package engine;
+
+    public class Answer {
+        private boolean success;
+        private String feedback;
+
+        public Answer(boolean success, String feedback) {
+            this.success = success;
+            this.feedback = feedback;
+        }
+
+        public boolean isSuccess() {
+            return success;
+        }
+
+        public void setSuccess(boolean success) {
+            this.success = success;
+        }
+
+        public String getFeedback() {
+            return feedback;
+        }
+
+        public void setFeedback(String feedback) {
+            this.feedback = feedback;
+        }
+    }
+  learner_created: true
+- name: src/engine/Answer.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/506/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/91/stages/506/implement">JetBrains
+    Academy</a>
+  time: Mon, 02 Nov 2020 05:29:15 UTC
 record: -1

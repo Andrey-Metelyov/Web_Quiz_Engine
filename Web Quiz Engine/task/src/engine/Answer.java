@@ -1,27 +1,29 @@
 package engine;
 
+import java.util.List;
+
 public class Answer {
-    private boolean success;
-    private String feedback;
+    private List<Integer> answer;
 
-    public Answer(boolean success, String feedback) {
-        this.success = success;
-        this.feedback = feedback;
+    public Answer() {
     }
 
-    public boolean isSuccess() {
-        return success;
+    public Answer(List<Integer> answer) {
+        this.answer = answer;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
+    public List<Integer> getAnswer() {
+        return answer;
     }
 
-    public String getFeedback() {
-        return feedback;
+    public void setAnswer(List<Integer> answer) {
+        this.answer = answer;
     }
 
-    public void setFeedback(String feedback) {
-        this.feedback = feedback;
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "answer=" + answer +
+                '}';
     }
 }

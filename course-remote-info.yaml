@@ -3,6 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/287312/additional_files.json
   is_template_based: false
   use_ide: true
+update_date: Mon, 02 Nov 2020 04:11:51 UTC
 stages:
 - id: 504
   step: 8252
@@ -12,7 +13,7 @@ stages:
   is_completed: true
 - id: 506
   step: 8254
-  is_completed: false
+  is_completed: true
 - id: 507
   step: 8255
   is_completed: false
@@ -60,6 +61,8 @@ topics:
     theory_id: 6854
   - title: Postman
     theory_id: 8512
+  - title: Functional decomposition
+    theory_id: 10570
   - title: IDE
     theory_id: 10996
   - title: Introduction to Spring Boot
@@ -134,10 +137,14 @@ topics:
     theory_id: 3498
   - title: Branching statements
     theory_id: 3507
+  - title: Switch statement
+    theory_id: 3504
   - title: Iterating over arrays
     theory_id: 3602
   - title: Defining methods
     theory_id: 3590
+  - title: The main method
+    theory_id: 3489
   - title: IntelliJ IDEA
     theory_id: 3801
   - title: Write, compile, and run
