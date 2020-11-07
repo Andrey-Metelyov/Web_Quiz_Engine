@@ -15,18 +15,6 @@ public class TaskController {
     Map<Integer, Quiz> quizMap = new HashMap<>();
 
     public TaskController() {
-//        quizMap.put(1,
-//                new Quiz(1,
-//                        "The Java Logo",
-//                        "What is depicted on the Java logo?",
-//                        new String[]{"Robot", "Tea leaf", "Cup of coffee", "Bug"},
-//                        2));
-//        quizMap.put(2,
-//                new Quiz(2,
-//                        "The Zopa Logo",
-//                        "What is depicted on the Java logo?",
-//                        new String[]{"Robot", "Ass", "Cup of coffee", "Bug"},
-//                        1));
     }
 
     @PostMapping(path = "/api/quizzes")
