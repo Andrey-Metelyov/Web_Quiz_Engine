@@ -22,5 +22,56 @@ public class QuizEntity {
 
     @OneToMany
     @JoinColumn(name = "quiz_id")
-    private Set<QuizAnswer> answer = new HashSet<>();
+    private Set<QuizAnswer> answers = new HashSet<>();
+
+    public Set<Integer> getAnswer() {
+        Set<Integer> result = new HashSet<>();
+        for (QuizAnswer answer : answers) {
+            result.add(answer.getAnswer());
+        }
+        return result;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public List<QuizOption> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<String> options) {
+        for (String option : options) {
+            this.options.add(new QuizOption(option));
+        }
+    }
+
+    public void setAnswer(Set<Integer> answers) {
+        for (Integer answer : answers) {
+            this.answers.add(new QuizAnswer(answer));
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "QuizEntity{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", options=" + options +
+                ", answer=" + answers +
+                '}';
+    }
 }

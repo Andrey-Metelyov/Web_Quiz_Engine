@@ -1,7 +1,11 @@
 package engine;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class QuizServiceImpl implements QuizService {
     @Autowired
     private QuizRepository quizRepository;
@@ -15,5 +19,10 @@ public class QuizServiceImpl implements QuizService {
     @Override
     public QuizEntity saveQuiz(QuizEntity quizEntity) {
         return quizRepository.save(quizEntity);
+    }
+
+    @Override
+    public List<QuizEntity> getAllQuizzes() {
+        return (List<QuizEntity>) quizRepository.findAll();
     }
 }

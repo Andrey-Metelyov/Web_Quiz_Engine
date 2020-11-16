@@ -11,4 +11,24 @@ public class QuizAnswer {
 
     @Column
     private int answer;
+
+    public QuizAnswer(Integer answer) {
+        this.answer = answer;
+    }
+
+    public void setAnswer(int answer) {
+        this.answer = answer;
+    }
+
+    public int getAnswer() {
+        return answer;
+    }
+
+    @Override
+    public String toString() {
+        return "QuizAnswer{" +
+                "id=" + id +
+                ", answer=" + answer +
+                '}';
+    }
 }

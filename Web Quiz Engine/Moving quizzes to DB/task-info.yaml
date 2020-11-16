@@ -722,5 +722,211 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/507/implement
-status: Unchecked
+status: Failed
+feedback:
+  message: "Wrong answer in test #2\n\nPOST /api/quizzes should respond with status\
+    \ code 200, responded: 500\n\nResponse body:\n\n{&quot;timestamp&quot;:&quot;2020-11-16T07:51:55.316+0000&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal\
+    \ Server Error&quot;,&quot;message&quot;:&quot;org.hibernate.TransientObjectException:\
+    \ object references an unsaved transient instance - save the transient instance\
+    \ before flushing: engine.QuizAnswer; nested exception is java.lang.IllegalStateException:\
+    \ org.hibernate.TransientObjectException: object references an unsaved transient\
+    \ instance - save the transient instance before flushing: engine.QuizAnswer&quot;,&quot;path&quot;:&quot;/api/quizzes&quot;}\n\
+    \nPlease find below the output of your program during this failed test.\n\n---\n\
+    \nNew quiz to add:QuizEntity{id=null, title=&#39;The Java Logo&#39;, text=&#39;What\
+    \ is depicted on the Java logo?&#39;, options=[QuizOption{id=null, option=&#39;Robot&#39;},\
+    \ QuizOption{id=null, option=&#39;Tea leaf&#39;}, QuizOption{id=null, option=&#39;Cup\
+    \ of coffee&#39;}, QuizOption{id=null, option=&#39;Bug&#39;}], answer=[QuizAnswer{id=null,\
+    \ answer=2}]}\nHibernate: insert into quiz (id, text, title) values (null, ?,\
+    \ ?)\nHibernate: update quiz_answer set quiz_id=? where answer_id=?\n2020-11-16\
+    \ 16:51:55.252  INFO 9852 --- [nio-8889-exec-3] o.h.e.j.b.internal.AbstractBatchImpl\
+    \     : HHH000010: On release of batch it still contained JDBC statements\n2020-11-16\
+    \ 16:51:55.267 ERROR 9852 --- [nio-8889-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]\
+    \    : Servlet.service() for servlet [dispatcherServlet] in context with path\
+    \ [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException:\
+    \ org.hibernate.TransientObjectException: object references an unsaved transient\
+    \ instance - save the transient instance before flushing: engine.QuizAnswer; nested\
+    \ exception is java.lang.IllegalStateException: org.hibernate.TransientObjectException:\
+    \ object references an unsaved transient instance - save the transient instance\
+    \ before flushing: engine.QuizAnswer] with root cause\n\norg.hibernate.TransientObjectException:\
+    \ object references an unsaved transient instance - save the transient instance\
+    \ before flushing: engine.QuizAnswer\n\tat org.hibernate.engine.internal.ForeignKeys.getEntityIdentifierIfNotUnsaved(ForeignKeys.java:347)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.type.EntityType.getIdentifier(EntityType.java:495)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.type.EntityType.nullSafeSet(EntityType.java:280)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.persister.collection.AbstractCollectionPersister.writeElement(AbstractCollectionPersister.java:927)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.persister.collection.AbstractCollectionPersister.recreate(AbstractCollectionPersister.java:1349)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.persister.collection.OneToManyPersister.recreate(OneToManyPersister.java:186)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.action.internal.CollectionRecreateAction.execute(CollectionRecreateAction.java:52)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)\
+    \ ~[na:na]\n\tat org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1344)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)\
+    \ ~[hibernate-core-5.4.9.Final.jar:5.4.9.Final]\n\tat org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)\
+    \ ~[spring-orm-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:744)\
+    \ ~[spring-tx-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:712)\
+    \ ~[spring-tx-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)\
+    \ ~[spring-tx-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)\
+    \ ~[spring-tx-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)\
+    \ ~[spring-tx-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\
+    \ ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)\
+    \ ~[spring-tx-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\
+    \ ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178)\
+    \ ~[spring-data-jpa-2.2.3.RELEASE.jar:2.2.3.RELEASE]\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\
+    \ ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)\
+    \ ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\
+    \ ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)\
+    \ ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat com.sun.proxy.$Proxy117.save(Unknown\
+    \ Source) ~[na:na]\n\tat engine.QuizServiceImpl.saveQuiz(QuizServiceImpl.java:21)\
+    \ ~[main/:na]\n\tat engine.TaskController.addQuiz(TaskController.java:44) ~[main/:na]\n\
+    \tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:660)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\
+    \ ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:282) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:279) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]\n\
+    \tat java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:550) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:314)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:170)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:225)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.access$000(ApplicationFilterChain.java:47)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:149)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:145)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.security.AccessController.doPrivileged(Native\
+    \ Method) ~[na:na]\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\
+    \ ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:282) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:279) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]\n\
+    \tat java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:550) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:314)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:191)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.access$000(ApplicationFilterChain.java:47)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:149)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:145)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.security.AccessController.doPrivileged(Native\
+    \ Method) ~[na:na]\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:282) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:279) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]\n\
+    \tat java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:550) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:314)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:191)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.access$000(ApplicationFilterChain.java:47)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:149)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:145)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.security.AccessController.doPrivileged(Native\
+    \ Method) ~[na:na]\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:282) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:279) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]\n\
+    \tat java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:550) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:314)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:191)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.access$000(ApplicationFilterChain.java:47)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:149)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:145)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.security.AccessController.doPrivileged(Native\
+    \ Method) ~[na:na]\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)\
+    \ ~[spring-boot-actuator-2.2.2.RELEASE.jar:2.2.2.RELEASE]\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:282) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:279) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]\n\
+    \tat java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:550) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:314)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:191)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.access$000(ApplicationFilterChain.java:47)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:149)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:145)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.security.AccessController.doPrivileged(Native\
+    \ Method) ~[na:na]\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\
+    \ ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:282) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:279) ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\
+    \tat java.base/java.security.AccessController.doPrivileged(Native Method) ~[na:na]\n\
+    \tat java.base/javax.security.auth.Subject.doAsPrivileged(Subject.java:550) ~[na:na]\n\
+    \tat org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:314)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:253)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:191)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain.access$000(ApplicationFilterChain.java:47)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:149)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:145)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.security.AccessController.doPrivileged(Native\
+    \ Method) ~[na:na]\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\
+    \ ~[na:na]\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\
+    \ ~[na:na]\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\
+    \ ~[tomcat-embed-core-9.0.29.jar:9.0.29]\n\tat java.base/java.lang.Thread.run(Thread.java:834)\
+    \ ~[na:na]"
+  time: Mon, 16 Nov 2020 07:51:55 UTC
 record: -1
