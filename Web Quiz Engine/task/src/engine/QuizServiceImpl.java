@@ -10,7 +10,6 @@ public class QuizServiceImpl implements QuizService {
     @Autowired
     private QuizRepository quizRepository;
 
-
     @Override
     public QuizEntity getQuizById(Long id) {
         return quizRepository.findById(id).get();

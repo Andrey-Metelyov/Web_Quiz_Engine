@@ -16,11 +16,11 @@ public class QuizEntity {
 
     private String text;
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "quiz_id", nullable = false)
     private List<QuizOption> options = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "quiz_id")
     private Set<QuizAnswer> answers = new HashSet<>();
 
@@ -30,6 +30,14 @@ public class QuizEntity {
             result.add(answer.getAnswer());
         }
         return result;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -52,17 +60,29 @@ public class QuizEntity {
         return options;
     }
 
-    public void setOptions(List<String> options) {
-        for (String option : options) {
-            this.options.add(new QuizOption(option));
-        }
+    public void setOptions(List<QuizOption> options) {
+        this.options = options;
     }
 
-    public void setAnswer(Set<Integer> answers) {
-        for (Integer answer : answers) {
-            this.answers.add(new QuizAnswer(answer));
-        }
+    public Set<QuizAnswer> getAnswers() {
+        return answers;
     }
+
+    public void setAnswers(Set<QuizAnswer> answers) {
+        this.answers = answers;
+    }
+
+    //    public void setOptions(List<String> options) {
+//        for (String option : options) {
+//            this.options.add(new QuizOption(option));
+//        }
+//    }
+//
+//    public void setAnswer(Set<Integer> answers) {
+//        for (Integer answer : answers) {
+//            this.answers.add(new QuizAnswer(answer));
+//        }
+//    }
 
     @Override
     public String toString() {

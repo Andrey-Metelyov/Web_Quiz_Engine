@@ -12,10 +12,6 @@ public class QuizOption {
     @Column
     private String option;
 
-    public QuizOption(String option) {
-        this.option = option;
-    }
-
     public String getOption() {
         return option;
     }
