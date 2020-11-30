@@ -60,16 +60,29 @@ public class QuizEntity {
         return options;
     }
 
-    public void setOptions(List<QuizOption> options) {
-        this.options = options;
+//    public void setOptions(List<QuizOption> options) {
+//        this.options = options;
+//    }
+
+    public void setOptions(String[] options) {
+        for (String option : options) {
+            this.options.add(new QuizOption(option));
+        }
     }
 
     public Set<QuizAnswer> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(Set<QuizAnswer> answers) {
-        this.answers = answers;
+//    public void setAnswers(Set<QuizAnswer> answers) {
+//        this.answers = answers;
+//    }
+
+    public void setAnswers(int[] answers) {
+        for (int answer : answers) {
+            this.answers.add(new QuizAnswer(answer));
+        }
+
     }
 
     //    public void setOptions(List<String> options) {
