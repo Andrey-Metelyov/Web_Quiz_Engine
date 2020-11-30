@@ -1,5 +1,7 @@
 package engine;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -16,22 +18,22 @@ public class QuizEntity {
 
     private String text;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "quiz_id", nullable = false)
-    private List<QuizOption> options = new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "quiz_id", nullable = false)
+//    private List<QuizOption> options = new ArrayList<>();
+    @ElementCollection
+//    @CollectionTable(name = "quiz_options", joinColumns = @JoinColumn(name = "quiz_id"))
+//    @Column(name = "options")
+    @OrderColumn
+    private List<String> options = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "quiz_id")
-    private Set<QuizAnswer> answers = new HashSet<>();
-
-    public Set<Integer> getAnswer() {
-        Set<Integer> result = new HashSet<>();
-        for (QuizAnswer answer : answers) {
-            result.add(answer.getAnswer());
-        }
-        return result;
-    }
-
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "quiz_id")
+    @JsonIgnore
+    @ElementCollection
+//    @CollectionTable(name = "quiz_answer", joinColumns = @JoinColumn(name = "quiz_id"))
+//    @Column(name = "answer")
+    private Set<Integer> answer = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -57,33 +59,21 @@ public class QuizEntity {
         this.text = text;
     }
 
-    public List<QuizOption> getOptions() {
+    public List<String> getOptions() {
         return options;
     }
 
-    public void setOptions(List<QuizOption> options) {
+    public void setOptions(List<String> options) {
         this.options = options;
     }
 
-    public Set<QuizAnswer> getAnswers() {
-        return answers;
+    public Set<Integer> getAnswer() {
+        return answer;
     }
 
-    public void setAnswers(Set<QuizAnswer> answers) {
-        this.answers = answers;
+    public void setAnswer(Set<Integer> answer) {
+        this.answer = answer;
     }
-
-    //    public void setOptions(List<String> options) {
-//        for (String option : options) {
-//            this.options.add(new QuizOption(option));
-//        }
-//    }
-//
-//    public void setAnswer(Set<Integer> answers) {
-//        for (Integer answer : answers) {
-//            this.answers.add(new QuizAnswer(answer));
-//        }
-//    }
 
     @Override
     public String toString() {
@@ -92,7 +82,7 @@ public class QuizEntity {
                 ", title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", options=" + options +
-                ", answer=" + answers +
+                ", answer=" + answer +
                 '}';
     }
 }

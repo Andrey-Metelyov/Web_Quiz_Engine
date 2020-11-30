@@ -1,5 +1,7 @@
 package engine;
 
+import trash.QuizAnswerEntity;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,11 +24,11 @@ public class QuizEntity {
 
     @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "quiz_id")
-    private Set<QuizAnswer> answers = new HashSet<>();
+    private Set<QuizAnswerEntity> answers = new HashSet<>();
 
     public Set<Integer> getAnswer() {
         Set<Integer> result = new HashSet<>();
-        for (QuizAnswer answer : answers) {
+        for (QuizAnswerEntity answer : answers) {
             result.add(answer.getAnswer());
         }
         return result;
@@ -70,7 +72,7 @@ public class QuizEntity {
         }
     }
 
-    public Set<QuizAnswer> getAnswers() {
+    public Set<QuizAnswerEntity> getAnswers() {
         return answers;
     }
 
@@ -80,7 +82,7 @@ public class QuizEntity {
 
     public void setAnswers(int[] answers) {
         for (int answer : answers) {
-            this.answers.add(new QuizAnswer(answer));
+            this.answers.add(new QuizAnswerEntity(answer));
         }
 
     }

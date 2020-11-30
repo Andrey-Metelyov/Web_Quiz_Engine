@@ -1,4 +1,4 @@
-package engine;
+package trash;
 
 import javax.persistence.*;
 

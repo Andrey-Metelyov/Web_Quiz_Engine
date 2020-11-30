@@ -1,9 +1,9 @@
-package engine;
+package trash;
 
 import javax.persistence.*;
 
 @Entity
-public class QuizAnswer {
+public class QuizAnswerEntity {
     @Id
     @Column(name = "answer_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +12,7 @@ public class QuizAnswer {
     @Column
     private int answer;
 
-    public QuizAnswer(int answer) {
+    public QuizAnswerEntity(int answer) {
         this.answer = answer;
     }
 

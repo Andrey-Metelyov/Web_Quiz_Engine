@@ -82,6 +82,7 @@ public class TaskController {
 
     @GetMapping()
     public Collection<QuizEntity> getQuizzes(){
+        System.out.println("Get all quizzes");
         return quizService.getAllQuizzes();
     }
 
