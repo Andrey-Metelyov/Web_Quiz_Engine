@@ -3,49 +3,52 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="73459f96-6f97-43a8-885b-8d970db9c173" name="Default Changelist" comment="aarrrrr">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_security_2_2_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_config_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_core_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_web_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Web Quiz Engine (2)/task/Web_Quiz_Engine.Web_Quiz_Engine__2_-task.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Web Quiz Engine (2)/task/Web_Quiz_Engine.Web_Quiz_Engine__2_-task.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Web Quiz Engine (2)/task/Web_Quiz_Engine.Web_Quiz_Engine__2_-task.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Advanced queries/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Advanced queries/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Lots of quizzes/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Lots of quizzes/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Making quizzes more interesting/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Making quizzes more interesting/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Moving quizzes to DB/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Moving quizzes to DB/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Solving a simple quiz/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Solving a simple quiz/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/AnswerFeedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/trash/QuizAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/Moving quizzes to DB/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (1)/Moving quizzes to DB/task-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/Answer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/AnswerFeedback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/Quiz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/QuizAnswer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/QuizEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/QuizOption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/QuizRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/QuizService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/QuizServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/TaskController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/classes/engine/WebQuizEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/out/production/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/src/engine/QuizAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (1)/task/src/trash/QuizAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/src/engine/QuizEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (1)/task/src/engine/QuizEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/task/src/engine/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (1)/task/src/engine/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine/quizdb.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine/quizdb.mv.db-real" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine/task/src/engine/QuizAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine/task/src/trash/QuizAnswerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine/task/src/engine/QuizEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine/task/src/engine/QuizEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (1)/lesson-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,17 +60,18 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\app\JetBrains\IntelliJ IDEA Community Edition\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1l0vNxzpVxJswKY41nYkUbHM1Wi" />
+  <component name="ProjectId" id="1lStSGU5o7dlcwu0xtBC2ZYLM7y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -75,16 +79,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="show.inlinked.gradle.project.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="engine" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="WebQuizEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="engine.WebQuizEngine" />
-      <module name="Web_Quiz_Engine.Web_Quiz_Engine__1_-task.main" />
+      <module name="Web_Quiz_Engine.Web_Quiz_Engine__2_-task.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="trash.*" />
+          <option name="PATTERN" value="engine.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,20 +111,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="73459f96-6f97-43a8-885b-8d970db9c173" name="Default Changelist" comment="" />
-      <created>1606746786973</created>
+      <changelist id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="" />
+      <created>1607602335868</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606746786973</updated>
+      <updated>1607602335868</updated>
     </task>
-    <task id="LOCAL-00001" summary="aarrrrr">
-      <created>1606747326254</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1606747326254</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,44 +129,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="aarrrrr" />
-    <option name="LAST_COMMIT_MESSAGE" value="aarrrrr" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="576" y="255" key="#Gradle" timestamp="1606747233968">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="576" y="255" key="#Gradle/0.0.1920.1160@0.0.1920.1160" timestamp="1606747233968" />
-    <state x="414" y="235" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606751192123">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="414" y="235" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1606751192123" />
-    <state x="765" y="264" key="#com.intellij.ide.util.MemberChooser" timestamp="1606748370598">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="765" y="264" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1606748370598" />
-    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1606751196782">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1606751196782" />
-    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1606751196782">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1606751196782" />
-    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1606751196782">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1606751196782" />
-    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1606751196782">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1606751196782" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1606747328989">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1606747328989" />
   </component>
 </project>
