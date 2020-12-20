@@ -9,11 +9,11 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class WebQuizUserDetails implements UserDetails {
-    private String username;
+    private User user;
 
-    public WebQuizUserDetails(String username) {
-        System.out.println("New user: " + username);
-        this.username = username;
+    public WebQuizUserDetails(User user) {
+        System.out.println("New user: " + user);
+        this.user = user;
     }
 
     @Override
@@ -23,13 +23,16 @@ public class WebQuizUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder.encode("pass");
+//        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+//        return bCryptPasswordEncoder.encode("pass");
+        System.out.println("get password: " + user.getPassword());
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return username;
+        System.out.println("get userName for " + user + ": " + user.getEmail());
+        return user.getEmail();
     }
 
     @Override

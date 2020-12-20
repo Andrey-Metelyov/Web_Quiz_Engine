@@ -4,50 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_security_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_config_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_core_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_web_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Web Quiz Engine (2)/task/Web_Quiz_Engine.Web_Quiz_Engine__2_-task.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Web Quiz Engine (2)/task/Web_Quiz_Engine.Web_Quiz_Engine__2_-task.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Web Quiz Engine (2)/task/Web_Quiz_Engine.Web_Quiz_Engine__2_-task.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Advanced queries/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Advanced queries/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Lots of quizzes/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Lots of quizzes/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Making quizzes more interesting/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Making quizzes more interesting/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Moving quizzes to DB/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Moving quizzes to DB/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Solving a simple quiz/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Solving a simple quiz/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/Answer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/AnswerFeedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/trash/QuizAnswer.java" afterDir="false" />
+    <list default="true" id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="5/6 in progress">
       <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (1)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (1)/lesson-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +56,7 @@
       <recent name="engine" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.WebQuizEngineTest">
     <configuration name="WebQuizEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="engine.WebQuizEngine" />
       <module name="Web_Quiz_Engine.Web_Quiz_Engine__2_-task.main" />
@@ -102,8 +70,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebQuizEngineTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;tests.WebQuizEngineTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":Web_Quiz_Engine__2_-task:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.WebQuizEngineTest" />
         <item itemvalue="Application.WebQuizEngine" />
       </list>
     </recent_temporary>
@@ -117,6 +107,14 @@
       <option name="presentableId" value="Default" />
       <updated>1607602335868</updated>
     </task>
+    <task id="LOCAL-00001" summary="5/6 in progress">
+      <created>1607610177538</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607610177538</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,5 +127,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="5/6 in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/6 in progress" />
   </component>
 </project>

@@ -1,16 +1,23 @@
 package engine;
 
+
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 
 @Entity(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Email(regexp = ".+@.+\\..+", message = "Email should be valid")
     private String email;
+    @Length(min = 5)
     private String password;
 
     public User() {

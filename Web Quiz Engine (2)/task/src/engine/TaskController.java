@@ -27,10 +27,11 @@ public class TaskController {
         System.out.println("Register new user: " + user);
         Optional<User> userInDb = userService.getUserByEmail(user.getEmail());
         if (userInDb.isPresent()) {
+            System.out.println("user = " + user + " already exit");
             return new ResponseEntity<>(user, HttpStatus.BAD_REQUEST);
         }
         User savedUser = userService.saveUser(user);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>(savedUser, HttpStatus.OK);
     }
 
     @PostMapping(path = "quizzes")

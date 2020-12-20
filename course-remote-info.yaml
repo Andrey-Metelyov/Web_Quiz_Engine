@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/287312/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Thu, 01 Jan 1970 00:00:00 UTC
+update_date: Sun, 20 Dec 2020 09:23:26 UTC
 stages:
 - id: 504
   step: 8252
@@ -65,6 +65,10 @@ topics:
     theory_id: 10996
   - title: Introduction to Spring Boot
     theory_id: 7944
+  - title: Write, compile, and run
+    theory_id: 3739
+  - title: JVM, JRE, and JDK
+    theory_id: 3499
   - title: What is an exception
     theory_id: 3497
   - title: NPE
@@ -153,10 +157,6 @@ topics:
     theory_id: 7427
   - title: IntelliJ IDEA
     theory_id: 3801
-  - title: Write, compile, and run
-    theory_id: 3739
-  - title: JVM, JRE, and JDK
-    theory_id: 3499
   - title: Errors in programs
     theory_id: 3536
   - title: Defining classes
@@ -244,20 +244,22 @@ topics:
     theory_id: 7054
   - title: Object-Relational Mapping(ORM)
     theory_id: 8312
-  - title: JPA Relationships
-    theory_id: 8936
   - title: H2 database
     theory_id: 8762
   - title: Introduction to JPA
     theory_id: 8771
+  - title: JPA Relationships
+    theory_id: 8936
   5:
   - title: Abstract class
     theory_id: 3597
-  - title: Anonymous classes
-    theory_id: 3564
+  - title: Default methods
+    theory_id: 11354
   - title: Lambda expressions
     theory_id: 11635
   - title: Method references
     theory_id: 3620
   - title: Functional interfaces
     theory_id: 11636
+  - title: Anonymous classes
+    theory_id: 3564

@@ -1003,5 +1003,25 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/508/implement#comment
-status: Unchecked
-record: -1
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #8
+
+    GET /api/quizzes should respond with status code 200, responded: 401
+
+    Response body:
+
+    {&quot;timestamp&quot;:&quot;2020-12-20T10:31:49.726+0000&quot;,&quot;status&quot;:401,&quot;error&quot;:&quot;Unauthorized&quot;,&quot;message&quot;:&quot;Unauthorized&quot;,&quot;path&quot;:&quot;/api/quizzes&quot;}
+
+    Please find below the output of your program during this failed test.
+
+    ---
+
+    Hibernate: select user0_.id as id1_3_, user0_.email as email2_3_, user0_.password as password3_3_ from users user0_ where user0_.email=?
+    Get user: test@google.com found: User{email=&#39;test@google.com&#39;, password=&#39;qwerty&#39;}
+    New user: User{email=&#39;test@google.com&#39;, password=&#39;qwerty&#39;}
+    get password: qwerty
+    2020-12-20 19:31:49.723  WARN 9232 --- [nio-8889-exec-9] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+  time: Sun, 20 Dec 2020 10:31:50 UTC
+record: 5
