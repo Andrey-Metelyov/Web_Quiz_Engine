@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="5/6 in progress">
+    <list default="true" id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="5/6 in progress 20122020">
       <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/WebQuizUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607610177538</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="5/6 in progress 20122020">
+      <created>1608460632405</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608460632405</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="5/6 in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="5/6 in progress" />
+    <MESSAGE value="5/6 in progress 20122020" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/6 in progress 20122020" />
   </component>
 </project>

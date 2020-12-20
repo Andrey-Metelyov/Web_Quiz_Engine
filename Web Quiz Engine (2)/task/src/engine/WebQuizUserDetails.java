@@ -23,10 +23,10 @@ public class WebQuizUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-//        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-//        return bCryptPasswordEncoder.encode("pass");
         System.out.println("get password: " + user.getPassword());
-        return user.getPassword();
+//        return user.getPassword();
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        return bCryptPasswordEncoder.encode(user.getPassword());
     }
 
     @Override
