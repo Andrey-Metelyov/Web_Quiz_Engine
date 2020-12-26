@@ -1115,6 +1115,282 @@ files:
         }
     }
   learner_created: false
+- name: src/engine/SecurityConfig.java
+  visible: true
+  text: |
+    package engine;
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.http.HttpMethod;
+    import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+    import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+    import org.springframework.security.config.annotation.web.builders.WebSecurity;
+    import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+    import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+    import org.springframework.security.core.userdetails.UserDetailsService;
+    import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+    import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+    import org.springframework.security.crypto.password.PasswordEncoder;
+
+    @EnableWebSecurity
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+        @Autowired
+        UserDetailsService userDetailsService;
+
+        @Override
+        protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+            auth.userDetailsService(userDetailsService);
+        }
+
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.csrf().disable()
+                    .httpBasic()
+                    .and().authorizeRequests()
+                    .antMatchers("/api/register/**").permitAll()
+                    .antMatchers("/api/quizzes/**").authenticated()
+                    .and().headers().frameOptions().disable();
+    //        http.csrf().disable()
+    //                .authorizeRequests()//.anyRequest().authenticated()
+    //                .antMatchers("/api/register").permitAll()
+    //                .anyRequest().authenticated();
+    ////                .antMatchers(HttpMethod.GET, "/api/quizzes").permitAll();
+    ////                .and().httpBasic()
+    ////                .and().sessionManagement().disable();
+        }
+
+    //    @Override
+    //    public void configure(WebSecurity web) throws Exception {
+    //        web.ignoring()
+    //                .antMatchers("/api/register");
+    //    }
+
+        @Bean
+        public PasswordEncoder getPasswordEncoder() {
+            return new BCryptPasswordEncoder();
+        }
+
+    }
+  learner_created: true
+- name: src/engine/UserRepository.java
+  visible: true
+  text: |
+    package engine;
+
+    import org.springframework.data.jpa.repository.JpaRepository;
+    import org.springframework.data.jpa.repository.Query;
+    import org.springframework.data.repository.query.Param;
+
+    import java.util.Optional;
+
+    public interface UserRepository extends JpaRepository<User, Integer> {
+        @Query("SELECT u FROM users u where u.email = :email")
+        Optional<User> getByEmail(@Param("email") String email);
+    }
+  learner_created: true
+- name: src/engine/UserServiceImpl.java
+  visible: true
+  text: |
+    package engine;
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+
+    import java.util.Optional;
+
+    @Service
+    public class UserServiceImpl implements UserService {
+        @Autowired
+        private UserRepository userRepository;
+
+        @Override
+        public Optional<User> getUserByEmail(String email) {
+            System.out.println("Get user by email: " + email);
+            return userRepository.getByEmail(email);
+        }
+
+        @Override
+        public User saveUser(User user) {
+            System.out.println("Save user: " + user);
+            return userRepository.save(user);
+        }
+    }
+  learner_created: true
+- name: src/engine/WebQuizUserDetails.java
+  visible: true
+  text: |
+    package engine;
+
+    import org.springframework.security.core.GrantedAuthority;
+    import org.springframework.security.core.authority.SimpleGrantedAuthority;
+    import org.springframework.security.core.userdetails.UserDetails;
+    import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+    import java.util.Arrays;
+    import java.util.Collection;
+
+    public class WebQuizUserDetails implements UserDetails {
+        private User user;
+
+        public WebQuizUserDetails(User user) {
+            System.out.println("New user: " + user);
+            this.user = user;
+        }
+
+        @Override
+        public Collection<? extends GrantedAuthority> getAuthorities() {
+            return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+        }
+
+        @Override
+        public String getPassword() {
+            System.out.println("get password: " + user.getPassword());
+    //        return user.getPassword();
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            return bCryptPasswordEncoder.encode(user.getPassword());
+        }
+
+        @Override
+        public String getUsername() {
+            System.out.println("get userName for " + user + ": " + user.getEmail());
+            return user.getEmail();
+        }
+
+        @Override
+        public boolean isAccountNonExpired() {
+            return true;
+        }
+
+        @Override
+        public boolean isAccountNonLocked() {
+            return true;
+        }
+
+        @Override
+        public boolean isCredentialsNonExpired() {
+            return true;
+        }
+
+        @Override
+        public boolean isEnabled() {
+            return true;
+        }
+    }
+  learner_created: true
+- name: src/engine/WebQuizUserDetailService.java
+  visible: true
+  text: |
+    package engine;
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.security.core.userdetails.UserDetails;
+    import org.springframework.security.core.userdetails.UserDetailsService;
+    import org.springframework.security.core.userdetails.UsernameNotFoundException;
+    import org.springframework.stereotype.Service;
+
+    import java.util.Optional;
+
+    @Service
+    public class WebQuizUserDetailService implements UserDetailsService {
+        @Autowired UserRepository userRepository;
+
+        @Override
+        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+            Optional<User> user = userRepository.getByEmail(username);
+            System.out.println("Get user: " + username + " found: " + user.get());
+            return new WebQuizUserDetails(user.get());
+        }
+    }
+  learner_created: true
+- name: src/engine/UserService.java
+  visible: true
+  text: |
+    package engine;
+
+    import java.util.Optional;
+
+    public interface UserService {
+        Optional<User> getUserByEmail(String email);
+
+        User saveUser(User user);
+    }
+  learner_created: true
+- name: src/engine/User.java
+  visible: true
+  text: |
+    package engine;
+
+
+    import org.hibernate.validator.constraints.Length;
+
+    import javax.persistence.Entity;
+    import javax.persistence.GeneratedValue;
+    import javax.persistence.GenerationType;
+    import javax.persistence.Id;
+    import javax.validation.constraints.Email;
+    import javax.validation.constraints.Pattern;
+
+    @Entity(name = "users")
+    public class User {
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private int id;
+        @Email(regexp = ".+@.+\\..+", message = "Email should be valid")
+        private String email;
+        @Length(min = 5)
+        private String password;
+
+        public User() {
+
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        @Override
+        public String toString() {
+            return "User{" +
+                    "id='" + id + '\'' +
+                    "email='" + email + '\'' +
+                    ", password='" + password + '\'' +
+                    '}';
+        }
+
+        public int getId() {
+            return id;
+        }
+    }
+  learner_created: true
+- name: src/engine/Completed.java
+  visible: true
+  learner_created: true
+- name: src/engine/CompletedRepository.java
+  visible: true
+  learner_created: true
+- name: src/engine/CompletedService.java
+  visible: true
+  learner_created: true
+- name: src/engine/CompletedServiceImpl.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/509/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 26 Dec 2020 14:54:13 UTC
 record: -1

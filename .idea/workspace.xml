@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="5/6 in progress auth done">
+    <list default="true" id="f178b951-a27a-4089-86fe-2808419b5c55" name="Default Changelist" comment="5/6 done">
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/Completed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/CompletedRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/CompletedService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/CompletedServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/User authorization/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/Advanced queries/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/Advanced queries/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/lesson-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/QuizServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/src/engine/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web Quiz Engine (2)/task/test/tests/WebQuizEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web Quiz Engine (2)/task/test/tests/WebQuizEngineTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,6 +50,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="show.inlinked.gradle.project.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -124,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608461719434</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="5/6 done">
+      <created>1608984030275</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608984030275</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +158,7 @@
     <MESSAGE value="5/6 in progress" />
     <MESSAGE value="5/6 in progress 20122020" />
     <MESSAGE value="5/6 in progress auth done" />
-    <option name="LAST_COMMIT_MESSAGE" value="5/6 in progress auth done" />
+    <MESSAGE value="5/6 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/6 done" />
   </component>
 </project>

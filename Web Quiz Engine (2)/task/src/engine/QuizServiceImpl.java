@@ -1,6 +1,8 @@
 package engine;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,5 +31,15 @@ public class QuizServiceImpl implements QuizService {
     @Override
     public List<QuizEntity> getAllQuizzes() {
         return (List<QuizEntity>) quizRepository.findAll();
+    }
+
+//    @Override
+//    public Page<QuizEntity> getAllQuizzes(Pageable pageable) {
+//        return null;
+//    }
+
+    @Override
+    public Page<QuizEntity> getAllQuizzes(Integer page) {
+        return quizRepository.findAll(PageRequest.of(page, 10));
     }
 }

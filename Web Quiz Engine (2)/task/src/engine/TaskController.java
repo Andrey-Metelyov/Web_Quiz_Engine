@@ -1,6 +1,7 @@
 package engine;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -8,7 +9,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collection;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Optional;
 import java.util.Set;
 
@@ -20,6 +22,9 @@ public class TaskController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private CompletedService compService;
 
     public TaskController() {
     }
@@ -43,7 +48,7 @@ public class TaskController {
         String currentPrincipalName = authentication.getName();
         System.out.println("Current user: " + currentPrincipalName);
         Optional<User> user = userService.getUserByEmail(currentPrincipalName);
-        entity.setUserId(user.get().getId());
+        entity.setAuthor(user.get().getId());
         QuizEntity savedEntity = quizService.saveQuiz(entity);
         return new ResponseEntity<>(savedEntity, HttpStatus.OK);
     }
@@ -58,6 +63,10 @@ public class TaskController {
         System.out.println("gotAnswer = " + gotAnswer);
         System.out.println("correctAnswer = " + correctAnswer);
         if (gotAnswer.equals(correctAnswer)) {
+            User user = getCurrentUser();
+            Completed completed = new Completed(user.getId(), quiz.getId(), Instant.now());
+            compService.save(completed);
+            quizService.saveQuiz(quiz);
             return new AnswerFeedback(true, "Congratulations, you're right!");
         }
         return new AnswerFeedback(false, "Wrong answer! Please, try again.");
@@ -72,24 +81,43 @@ public class TaskController {
             return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);
         }
         System.out.println("Deleting entity: " + entity.get());
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentPrincipalName = authentication.getName();
-        System.out.println("Current user: " + currentPrincipalName);
-        Optional<User> user = userService.getUserByEmail(currentPrincipalName);
-        System.out.println("Current user object: " + user.get());
-        if (entity.get().getUserId() == user.get().getId()) {
+        User user = getCurrentUser();
+        if (entity.get().getAuthor() == user.getId()) {
             System.out.println("Deleting quiz");
             quizService.deleteById(id);
+            System.out.println("Deleting answers");
+            compService.deleteByQuizId(id);
             return new ResponseEntity<>(id, HttpStatus.NO_CONTENT);
         }
         System.out.println("Wrong user");
         return new ResponseEntity<>(id, HttpStatus.FORBIDDEN);
     }
 
+    private User getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        System.out.println("Current user: " + currentPrincipalName);
+        Optional<User> user = userService.getUserByEmail(currentPrincipalName);
+        System.out.println("Current user object: " + user.get());
+        return user.get();
+    }
+
+//    @GetMapping(path = "quizzes")
+//    public Collection<QuizEntity> getAllQuzzes() {
+//        System.out.println("Get all quizzes");
+//        return quizService.getAllQuizzes();
+//    }
+
     @GetMapping(path = "quizzes")
-    public Collection<QuizEntity> getAllQuzzes() {
+    public Page<QuizEntity> getAllQuzzes(@RequestParam Optional<Integer> page) {
         System.out.println("Get all quizzes");
-        return quizService.getAllQuizzes();
+        return quizService.getAllQuizzes(page.orElse(0));
+    }
+
+    @GetMapping(path = "quizzes/completed")
+    public Page<Completed> getCompletedQuzzes(@RequestParam Optional<Integer> page) {
+        System.out.println("Get completed quizzes");
+        return compService.getCompletedByUser(getCurrentUser(), page.orElse(0));
     }
 
     @GetMapping(path = "quizzes/{id}")

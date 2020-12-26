@@ -1,6 +1,6 @@
 package engine;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface QuizRepository extends CrudRepository<QuizEntity, Long> {
+public interface QuizRepository extends PagingAndSortingRepository<QuizEntity, Long> {
 }

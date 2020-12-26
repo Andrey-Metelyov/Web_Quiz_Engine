@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -31,7 +32,7 @@ public class QuizEntity {
     private Set<Integer> answer = new HashSet<>();
 
     @JsonIgnore
-    private int userId;
+    private int author;
 
     public Long getId() {
         return id;
@@ -77,15 +78,27 @@ public class QuizEntity {
                 ", text='" + text + '\'' +
                 ", options=" + options +
                 ", answer=" + answer +
-                ", userId=" + userId +
+                ", userId=" + author +
                 '}';
     }
 
-    public int getUserId() {
-        return userId;
+    public int getAuthor() {
+        return author;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setAuthor(int author) {
+        this.author = author;
     }
+
+//    public List<Completed> getCompleted() {
+//        return completed;
+//    }
+//
+//    public void setCompleted(List<Completed> completed) {
+//        this.completed = completed;
+//    }
+//
+//    public void addCompleted(int userId, Instant time) {
+//        completed.add(new Completed(userId, time));
+//    }
 }
