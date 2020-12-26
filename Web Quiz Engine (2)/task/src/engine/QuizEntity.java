@@ -30,6 +30,9 @@ public class QuizEntity {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Integer> answer = new HashSet<>();
 
+    @JsonIgnore
+    private int userId;
+
     public Long getId() {
         return id;
     }
@@ -74,6 +77,15 @@ public class QuizEntity {
                 ", text='" + text + '\'' +
                 ", options=" + options +
                 ", answer=" + answer +
+                ", userId=" + userId +
                 '}';
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

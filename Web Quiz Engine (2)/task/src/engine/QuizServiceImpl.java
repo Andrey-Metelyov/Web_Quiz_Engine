@@ -22,6 +22,11 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
+    public void deleteById(Long id) {
+        quizRepository.deleteById(id);
+    }
+
+    @Override
     public List<QuizEntity> getAllQuizzes() {
         return (List<QuizEntity>) quizRepository.findAll();
     }

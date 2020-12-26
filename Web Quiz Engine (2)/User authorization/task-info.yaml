@@ -1003,27 +1003,8 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/508/implement#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #153
-
-    DELETE /api/quizzes/1 should respond with status code 204, responded: 405
-
-    Response body:
-
-    {&quot;timestamp&quot;:&quot;2020-12-20T10:48:21.279+0000&quot;,&quot;status&quot;:405,&quot;error&quot;:&quot;Method Not Allowed&quot;,&quot;message&quot;:&quot;Request method &#39;DELETE&#39; not supported&quot;,&quot;path&quot;:&quot;/api/quizzes/1&quot;}
-
-    Please find below the output of your program during this failed test.
-
-    ---
-
-    Hibernate: select user0_.id as id1_3_, user0_.email as email2_3_, user0_.password as password3_3_ from users user0_ where user0_.email=?
-    Get user: test@google.com found: User{email=&#39;test@google.com&#39;, password=&#39;qwerty&#39;}
-    New user: User{email=&#39;test@google.com&#39;, password=&#39;qwerty&#39;}
-    get password: qwerty
-    2020-12-20 19:48:21.278  WARN 10944 --- [nio-8889-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method &#39;DELETE&#39; not supported]
-    get userName for User{email=&#39;test@google.com&#39;, password=&#39;qwerty&#39;}: test@google.com
-    get userName for User{email=&#39;test@google.com&#39;, password=&#39;qwerty&#39;}: test@google.com
-  time: Sun, 20 Dec 2020 10:48:21 UTC
+  message: Congratulations!
+  time: Sat, 26 Dec 2020 12:00:01 UTC
 record: 5

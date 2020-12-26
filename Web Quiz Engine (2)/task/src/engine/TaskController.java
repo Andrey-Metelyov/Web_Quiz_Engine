@@ -3,6 +3,8 @@ package engine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -37,6 +39,11 @@ public class TaskController {
     @PostMapping(path = "quizzes")
     public ResponseEntity<QuizEntity> add(@Valid @RequestBody final QuizEntity entity) {
         System.out.println("New quiz: " + entity);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        System.out.println("Current user: " + currentPrincipalName);
+        Optional<User> user = userService.getUserByEmail(currentPrincipalName);
+        entity.setUserId(user.get().getId());
         QuizEntity savedEntity = quizService.saveQuiz(entity);
         return new ResponseEntity<>(savedEntity, HttpStatus.OK);
     }
@@ -54,6 +61,29 @@ public class TaskController {
             return new AnswerFeedback(true, "Congratulations, you're right!");
         }
         return new AnswerFeedback(false, "Wrong answer! Please, try again.");
+    }
+
+    @DeleteMapping(path = "quizzes/{id}")
+    public ResponseEntity<Long> deleteQuiz(@PathVariable Long id) {
+        System.out.println("Delete quiz : " + id);
+        Optional<QuizEntity> entity = quizService.getQuizById(id);
+        if (!entity.isPresent()) {
+            System.out.println("Quiz with id " + id + " not found");
+            return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);
+        }
+        System.out.println("Deleting entity: " + entity.get());
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        System.out.println("Current user: " + currentPrincipalName);
+        Optional<User> user = userService.getUserByEmail(currentPrincipalName);
+        System.out.println("Current user object: " + user.get());
+        if (entity.get().getUserId() == user.get().getId()) {
+            System.out.println("Deleting quiz");
+            quizService.deleteById(id);
+            return new ResponseEntity<>(id, HttpStatus.NO_CONTENT);
+        }
+        System.out.println("Wrong user");
+        return new ResponseEntity<>(id, HttpStatus.FORBIDDEN);
     }
 
     @GetMapping(path = "quizzes")

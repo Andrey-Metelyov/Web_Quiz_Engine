@@ -8,5 +8,7 @@ public interface QuizService {
 
     QuizEntity saveQuiz(QuizEntity quizEntity);
 
+    void deleteById(Long id);
+
     List<QuizEntity> getAllQuizzes();
 }
